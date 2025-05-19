@@ -3,12 +3,12 @@ version: "3"
 services:
  db:
    container_name: db-cont
-   build: /Docker-db
+   image: anildoc143/java:db
    ports:
      - "3306:3306"
 
  application:
-   build: /Docker-app
+   image: anildoc143/java:app
    container_name: app-cont
    ports:
      - "1234:8080"
