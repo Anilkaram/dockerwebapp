@@ -1,15 +1,15 @@
 ---
 version: "3"
 services:
- devopsdb:
-   container_name: devopsdb
-   image: susmitha756/susmi:dbimage
+ db:
+   container_name: db-cont
+   build: /Docker-db
    ports:
      - "3306:3306"
 
  application:
-   image: susmitha756/susmi:appimage
-   container_name: appcontainer
+   build: /Docker-app
+   container_name: app-cont
    ports:
      - "1234:8080"
    depends_on:
